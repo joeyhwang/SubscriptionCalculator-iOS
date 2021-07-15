@@ -1,9 +1,10 @@
 # SubscriptionCalculator-iOS
 
 ## Video Walkthrough
-https://user-images.githubusercontent.com/19678167/125744468-d4ef5a1c-6d79-4c43-b92c-4a31a37694e6.MP4
+https://user-images.githubusercontent.com/19678167/125746845-d1c5ab9d-95ee-4a9c-81f3-553ed2df9e07.MP4
 
-## Website Description
+
+## App Description
 - This iOS App is designed to help users keep track of their active/inactive subscriptions.
 - The Subscriptions tab has a fixed amount of subscriptions per category. The subscriptions in this list are manually added.
 - The active tab shows all active subscriptions, and each subscription can be deactivated, which will place it in the inactive tab.
