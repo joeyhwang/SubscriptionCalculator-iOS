@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qb2-pr-w4G">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Subscriptions View Controller-->
+        <scene sceneID="myc-x8-nAr">
+            <objects>
+                <viewController id="F1y-aY-3Ci" customClass="SubscriptionsViewController" customModule="SubscriptionCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pX4-Pp-yWr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="plL-uZ-sgh">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="157" id="MCq-0m-ofD" customClass="CategoryTableViewCell" customModule="SubscriptionCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="157"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MCq-0m-ofD" id="UmJ-BS-e6R">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="157"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Z5J-X9-bQ5">
+                                                    <rect key="frame" x="10" y="0.0" width="394" height="157"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oSX-7E-JN9">
+                                                        <size key="itemSize" width="108" height="115"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SubscriptionCollectionViewCell" id="5r0-UP-1Fj" customClass="SubscriptionCollectionViewCell" customModule="SubscriptionCalculator" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="21" width="108" height="115"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="edW-w4-XQ3">
+                                                                <rect key="frame" x="0.0" y="0.0" width="108" height="115"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gnJ-DA-G4V">
+                                                                        <rect key="frame" x="8" y="17" width="72" height="68"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    </imageView>
+                                                                </subviews>
+                                                            </collectionViewCellContentView>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <size key="customSize" width="108" height="115"/>
+                                                            <connections>
+                                                                <outlet property="subscriptionIcon" destination="gnJ-DA-G4V" id="Jmu-SL-eKh"/>
+                                                                <segue destination="nfU-pw-IHt" kind="show" id="XIL-9H-Bno"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="MCq-0m-ofD" id="CqK-1m-b8n"/>
+                                                        <outlet property="delegate" destination="MCq-0m-ofD" id="ID0-UN-5KY"/>
+                                                    </connections>
+                                                </collectionView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Z5J-X9-bQ5" secondAttribute="trailing" constant="10" id="AnK-dB-1h5"/>
+                                                <constraint firstItem="Z5J-X9-bQ5" firstAttribute="top" secondItem="UmJ-BS-e6R" secondAttribute="top" id="Eil-6S-RXI"/>
+                                                <constraint firstItem="Z5J-X9-bQ5" firstAttribute="leading" secondItem="UmJ-BS-e6R" secondAttribute="leading" constant="10" id="egS-3c-Z96"/>
+                                                <constraint firstAttribute="bottom" secondItem="Z5J-X9-bQ5" secondAttribute="bottom" id="gh8-X0-k9c"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="collectionView" destination="Z5J-X9-bQ5" id="5B3-Qo-tMU"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="F1y-aY-3Ci" id="YUp-VM-3qk"/>
+                                    <outlet property="delegate" destination="F1y-aY-3Ci" id="KDK-bo-o7w"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="plL-uZ-sgh" firstAttribute="trailing" secondItem="okq-nZ-3gJ" secondAttribute="trailing" id="Cf2-kG-aPc"/>
+                            <constraint firstItem="plL-uZ-sgh" firstAttribute="leading" secondItem="okq-nZ-3gJ" secondAttribute="leading" id="LHL-8A-2OX"/>
+                            <constraint firstItem="plL-uZ-sgh" firstAttribute="top" secondItem="okq-nZ-3gJ" secondAttribute="top" id="f0W-hJ-7e9"/>
+                            <constraint firstItem="plL-uZ-sgh" firstAttribute="bottom" secondItem="okq-nZ-3gJ" secondAttribute="bottom" id="tp5-vz-mcc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="okq-nZ-3gJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ams-km-kxm"/>
+                    <connections>
+                        <outlet property="subscriptionTable" destination="plL-uZ-sgh" id="Mwj-34-Mpr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kjv-Mj-soR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1018.4" y="146.17691154422789"/>
+        </scene>
+        <!--Add Subscription View Controller-->
+        <scene sceneID="a98-9c-ykg">
+            <objects>
+                <viewController storyboardIdentifier="AddSubscriptionViewController" id="nfU-pw-IHt" customClass="AddSubscriptionViewController" customModule="SubscriptionCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RqB-b4-Ufc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qxH-C2-Pud">
+                                <rect key="frame" x="20" y="463" width="374" height="205"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kET-6q-HbQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="36"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cM8-Ck-pwT">
+                                                <rect key="frame" x="0.0" y="0.0" width="264" height="36"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ok2-7j-s2m">
+                                                <rect key="frame" x="264" y="0.0" width="110" height="36"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="110" id="7cQ-Xr-MEQ"/>
+                                                </constraints>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                <connections>
+                                                    <action selector="textFieldChanged:" destination="nfU-pw-IHt" eventType="editingChanged" id="XMf-4o-mSq"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PdG-dT-PMq">
+                                        <rect key="frame" x="0.0" y="56" width="374" height="36"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OeC-yr-sOw">
+                                                <rect key="frame" x="0.0" y="0.0" width="264" height="36"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HJf-Zj-64E">
+                                                <rect key="frame" x="264" y="0.0" width="110" height="36"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="110" id="cpL-k0-TaG"/>
+                                                </constraints>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vgc-3p-nXl">
+                                        <rect key="frame" x="0.0" y="112" width="374" height="36"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Billing Cycle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCW-7E-Ktz">
+                                                <rect key="frame" x="0.0" y="0.0" width="264" height="36"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Cycle" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C5d-gl-L5S">
+                                                <rect key="frame" x="264" y="0.0" width="110" height="36"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="110" id="xbb-eB-M3r"/>
+                                                </constraints>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ScK-ns-blA">
+                                        <rect key="frame" x="0.0" y="168" width="374" height="37"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Month(s) Free" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qfz-T5-A8A">
+                                                <rect key="frame" x="0.0" y="0.0" width="264" height="37"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hbs-0W-rX8">
+                                                <rect key="frame" x="264" y="0.0" width="110" height="37"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="110" id="IVf-sd-two"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i0q-aC-lME">
+                                <rect key="frame" x="116" y="240.5" width="182" height="192.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="182" id="LoP-dS-iV6"/>
+                                    <constraint firstAttribute="height" constant="192.5" id="PY3-eh-cFI"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nng-YK-XfH">
+                                <rect key="frame" x="69" y="718" width="276" height="37"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
+                                <state key="normal" title="Add to Active Subscriptions">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addSubscriptionButton:" destination="nfU-pw-IHt" eventType="touchUpInside" id="Z2L-Si-JjW"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="l5p-ik-h29">
+                                <rect key="frame" x="20" y="118" width="374" height="92.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxN-xo-Cae">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="38.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="28"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Spent: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HwJ-Mh-N1f">
+                                        <rect key="frame" x="0.0" y="43.5" width="374" height="22"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days to Renewal: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Lz-je-eVj" userLabel="Days Until Next Renewal:">
+                                        <rect key="frame" x="0.0" y="70.5" width="374" height="22"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Qml-AO-5VI" firstAttribute="trailing" secondItem="i0q-aC-lME" secondAttribute="trailing" constant="116" id="2uf-r6-Dx0"/>
+                            <constraint firstItem="i0q-aC-lME" firstAttribute="top" secondItem="l5p-ik-h29" secondAttribute="bottom" constant="30" id="828-YO-H3X"/>
+                            <constraint firstItem="Qml-AO-5VI" firstAttribute="trailing" secondItem="Nng-YK-XfH" secondAttribute="trailing" constant="69" id="8tc-iv-ck5"/>
+                            <constraint firstItem="Nng-YK-XfH" firstAttribute="leading" secondItem="Qml-AO-5VI" secondAttribute="leading" constant="69" id="AE9-2C-9Rv"/>
+                            <constraint firstItem="qxH-C2-Pud" firstAttribute="leading" secondItem="Qml-AO-5VI" secondAttribute="leading" constant="20" id="MLX-yb-7sh"/>
+                            <constraint firstItem="Qml-AO-5VI" firstAttribute="bottom" secondItem="Nng-YK-XfH" secondAttribute="bottom" constant="58" id="TiP-Um-Giu"/>
+                            <constraint firstItem="Qml-AO-5VI" firstAttribute="trailing" secondItem="qxH-C2-Pud" secondAttribute="trailing" constant="20" id="ecz-Xs-7QO"/>
+                            <constraint firstItem="i0q-aC-lME" firstAttribute="leading" secondItem="Qml-AO-5VI" secondAttribute="leading" constant="116" id="gQa-tf-Nim"/>
+                            <constraint firstItem="l5p-ik-h29" firstAttribute="leading" secondItem="Qml-AO-5VI" secondAttribute="leading" constant="20" id="kLm-hk-fnz"/>
+                            <constraint firstItem="Nng-YK-XfH" firstAttribute="top" secondItem="qxH-C2-Pud" secondAttribute="bottom" constant="50" id="m6i-gH-J40"/>
+                            <constraint firstItem="l5p-ik-h29" firstAttribute="top" secondItem="Qml-AO-5VI" secondAttribute="top" constant="30" id="oI7-03-oDf"/>
+                            <constraint firstItem="Qml-AO-5VI" firstAttribute="trailing" secondItem="l5p-ik-h29" secondAttribute="trailing" constant="20" id="rSX-qb-P6t"/>
+                            <constraint firstItem="qxH-C2-Pud" firstAttribute="top" secondItem="i0q-aC-lME" secondAttribute="bottom" constant="30" id="zla-kE-cFv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Qml-AO-5VI"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="GYi-39-i2e"/>
+                    <connections>
+                        <outlet property="billingCycleTextField" destination="C5d-gl-L5S" id="HFn-jZ-psP"/>
+                        <outlet property="createActiveSubButton" destination="Nng-YK-XfH" id="KHd-Z3-XAR"/>
+                        <outlet property="monthsFreeTextField" destination="hbs-0W-rX8" id="D85-QF-vie"/>
+                        <outlet property="priceTextField" destination="Ok2-7j-s2m" id="8zR-cU-7be"/>
+                        <outlet property="renewalLabel" destination="8Lz-je-eVj" id="3I3-hK-c9S"/>
+                        <outlet property="startDateTextField" destination="HJf-Zj-64E" id="OHx-11-fLx"/>
+                        <outlet property="subscriptionImage" destination="i0q-aC-lME" id="ght-CT-pfr"/>
+                        <outlet property="subscriptionLabel" destination="hxN-xo-Cae" id="Gat-D5-l0D"/>
+                        <outlet property="totalSpentLabel" destination="HwJ-Mh-N1f" id="ctW-Tr-wCf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Ix-4r-J11" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1920.289855072464" y="145.98214285714286"/>
+        </scene>
+        <!--Subscriptions-->
+        <scene sceneID="hVR-9P-1Dq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qb2-pr-w4G" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Subscriptions" image="subscription" selectedImage="subscription" id="wUH-l6-VRK"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="q8K-jK-UDI">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="F1y-aY-3Ci" kind="relationship" relationship="rootViewController" id="ffK-EE-a8o"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P4R-gZ-l5g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="108.69565217391305" y="146.65178571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="subscription" width="25" height="25"/>
+    </resources>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+</document>
